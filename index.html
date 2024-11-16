@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John W. Smith - Portfolio</title>
+    <style>
+        body {
+            font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #ffc107;
+            color: #000000;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1, h2, h3 {
+            color: #000000;
+            margin-top: 0;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        .section {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .section-header {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .section-content {
+            display: none;
+            padding-top: 1rem;
+        }
+        .project, .experience-item, .education-item {
+            margin-bottom: 1.5rem;
+        }
+        .expand-icon::after {
+            content: '▼';
+            font-size: 0.8em;
+            transition: transform 0.3s ease;
+        }
+        .section.expanded .expand-icon::after {
+            content: '▲';
+        }
+        .section.expanded .section-content {
+            display: block;
+        }
+        ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        a {
+            color: #0070f3;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .slogan {
+            font-style: italic;
+            color: #000000aa;
+            margin-bottom: 2rem;
+        }
+        .skill-category {
+            margin-bottom: 1rem;
+        }
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .skill-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>John W. Smith</h1>
+            <p>Early Childhood Development Specialist</p>
+            <p class="slogan">Dedicated to nurturing special needs individuals</p>
+        </header>
+
+        <section class="section" id="experience-section">
+            <div class="section-header">
+                <h2>Experience</h2>
+                <span class="expand-icon"></span>
+            </div>
+            <div class="section-content">
+                
+                    <div class="experience-item">
+                        <h3>Counseling Supervisor at The Wesley Center</h3>
+                        <p>1999-2002</p>
+                    </div>
+                
+                    <div class="experience-item">
+                        <h3>Client Specialist at Rainbow Special Care Center</h3>
+                        <p>1997-1999</p>
+                    </div>
+                
+                    <div class="experience-item">
+                        <h3>Teacher's Assistant at Cowell Elementary</h3>
+                        <p>1996-1997</p>
+                    </div>
+                
+            </div>
+        </section>
+
+        <section class="section" id="skills-section">
+            <div class="section-header">
+                <h2>Skills</h2>
+                <span class="expand-icon"></span>
+            </div>
+            <div class="section-content">
+                
+                    <div class="skill-category">
+                        <h3>category</h3>
+                        <div class="skill-list">
+                            <span class="skill-item">Early Childhood Development</span><span class="skill-item">Special Needs Care</span><span class="skill-item">Volunteer Management</span><span class="skill-item">Client Coordination</span>
+                        </div>
+                    </div>
+                
+            </div>
+        </section>
+
+        <section class="section" id="projects-section">
+            <div class="section-header">
+                <h2>Projects</h2>
+                <span class="expand-icon"></span>
+            </div>
+            <div class="section-content">
+                
+            </div>
+        </section>
+
+        <section class="section" id="education-section">
+            <div class="section-header">
+                <h2>Education</h2>
+                <span class="expand-icon"></span>
+            </div>
+            <div class="section-content">
+                
+                    <div class="education-item">
+                        <h3>BS in Early Childhood Development</h3>
+                        <p>University of Arkansas at Little Rock, Little Rock, AR</p>
+                    </div>
+                
+                    <div class="education-item">
+                        <h3>BA in Elementary Education</h3>
+                        <p>University of Arkansas at Little Rock, Little Rock, AR</p>
+                    </div>
+                
+            </div>
+        </section>
+
+        <section class="section" id="interests-section">
+            <div class="section-header">
+                <h2>Interests</h2>
+                <span class="expand-icon"></span>
+            </div>
+            <div class="section-content">
+                <ul>
+                    <li>Child Development</li><li>Educational Support</li><li>Community Service</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const header = section.querySelector('.section-header');
+                header.addEventListener('click', () => {
+                    section.classList.toggle('expanded');
+                });
+            });
+
+            // Expand the first section by default
+            sections[0].classList.add('expanded');
+        });
+    </script>
+</body>
+</html>
+  
